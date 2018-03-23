@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
-    
+    @IBOutlet var scoreLabel: UILabel!
     
     var countries = [String]()
     var correctAnswer = 0
@@ -30,11 +30,10 @@ class ViewController: UIViewController {
         button1.layer.borderColor = UIColor.lightGray.cgColor
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
-        askQuestion(action: nil)
-        // Do any additional setup after loading the view, typically from a nib.
+        askQuestion()
     }
     
-    func askQuestion(action: UIAlertAction!) {
+    func askQuestion() {
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
@@ -42,25 +41,19 @@ class ViewController: UIViewController {
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
         correctAnswer = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
-        
         title = countries[correctAnswer].uppercased()
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
-        var title: String
         if sender.tag == correctAnswer {
-            title = "Correct!"
             score += 1
         } else {
-            title = "Wrong"
             score -= 1
         }
-        
-        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        present(ac, animated: true)
+        scoreLabel.text = "Score: \(String(score))"
+        askQuestion()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

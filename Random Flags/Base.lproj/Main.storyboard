@@ -39,11 +39,19 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYc-1K-y6O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Points: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acI-e8-Hf1">
+                                <rect key="frame" x="16" y="546" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XI7-X1-tCr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5Y9-O1-n8R"/>
+                            <constraint firstItem="acI-e8-Hf1" firstAttribute="centerX" secondItem="CgF-Tc-7qh" secondAttribute="centerX" id="9uk-MA-vds"/>
                             <constraint firstItem="CgF-Tc-7qh" firstAttribute="top" secondItem="ZLR-8K-Ja3" secondAttribute="bottom" constant="30" id="Cfa-VR-7NZ"/>
+                            <constraint firstItem="acI-e8-Hf1" firstAttribute="top" secondItem="CgF-Tc-7qh" secondAttribute="bottom" constant="86" id="JU6-Yj-bdc"/>
                             <constraint firstItem="ZLR-8K-Ja3" firstAttribute="top" secondItem="XI7-X1-tCr" secondAttribute="bottom" constant="30" id="h2L-vJ-NRe"/>
                             <constraint firstItem="ZLR-8K-Ja3" firstAttribute="centerX" secondItem="XI7-X1-tCr" secondAttribute="centerX" id="oDp-ur-InK"/>
                             <constraint firstItem="CgF-Tc-7qh" firstAttribute="centerX" secondItem="ZLR-8K-Ja3" secondAttribute="centerX" id="pNT-hC-phk"/>
@@ -56,11 +64,12 @@
                         <outlet property="button1" destination="XI7-X1-tCr" id="Rg1-do-ODR"/>
                         <outlet property="button2" destination="ZLR-8K-Ja3" id="aYk-iB-gBe"/>
                         <outlet property="button3" destination="CgF-Tc-7qh" id="Mjm-mf-I4e"/>
+                        <outlet property="scoreLabel" destination="acI-e8-Hf1" id="bJS-O8-czj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="107"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="106.59670164917542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4fH-A8-Wd1">
